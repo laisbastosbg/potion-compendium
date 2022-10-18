@@ -9,21 +9,43 @@
 /* Begin PBXBuildFile section */
 		0B5D349928F9AB1300F8B24A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5D349828F9AB1300F8B24A /* AppDelegate.swift */; };
 		0B5D349B28F9AB1300F8B24A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5D349A28F9AB1300F8B24A /* SceneDelegate.swift */; };
-		0B5D349D28F9AB1300F8B24A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5D349C28F9AB1300F8B24A /* ViewController.swift */; };
-		0B5D34A028F9AB1300F8B24A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B5D349E28F9AB1300F8B24A /* Main.storyboard */; };
 		0B5D34A228F9AB1400F8B24A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B5D34A128F9AB1400F8B24A /* Assets.xcassets */; };
 		0B5D34A528F9AB1400F8B24A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B5D34A328F9AB1400F8B24A /* LaunchScreen.storyboard */; };
+		0B5D34B128FD8B2D00F8B24A /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5D34B028FD8B2D00F8B24A /* APIManager.swift */; };
+		0B5D34B328FD8B3B00F8B24A /* Potion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5D34B228FD8B3B00F8B24A /* Potion.swift */; };
+		0B5D34B528FD8B5400F8B24A /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5D34B428FD8B5400F8B24A /* Ingredient.swift */; };
+		0B5D34BA28FD8BA900F8B24A /* IngredientsGatheringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5D34B928FD8BA900F8B24A /* IngredientsGatheringViewController.swift */; };
+		0B5D34BC28FD8BC500F8B24A /* IngredientsGatheringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5D34BB28FD8BC500F8B24A /* IngredientsGatheringView.swift */; };
+		0B5D34BE28FD8C2300F8B24A /* PotionBrewingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5D34BD28FD8C2300F8B24A /* PotionBrewingViewController.swift */; };
+		0B5D34C028FD8CE300F8B24A /* PotionBrewingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5D34BF28FD8CE300F8B24A /* PotionBrewingView.swift */; };
+		0B5D34C228FD8CF900F8B24A /* UnlockedPotionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5D34C128FD8CF900F8B24A /* UnlockedPotionsViewController.swift */; };
+		0B5D34C428FD8D0A00F8B24A /* UnlockedPotionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5D34C328FD8D0A00F8B24A /* UnlockedPotionsView.swift */; };
+		0B5D34C628FD91FF00F8B24A /* IngredientsGatheringViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5D34C528FD91FF00F8B24A /* IngredientsGatheringViewModel.swift */; };
+		0B5D34C828FD920F00F8B24A /* PotionBrewingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5D34C728FD920F00F8B24A /* PotionBrewingViewModel.swift */; };
+		0B5D34CA28FD922F00F8B24A /* UnlockedPotionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5D34C928FD922F00F8B24A /* UnlockedPotionsViewModel.swift */; };
+		0B5D34CE28FED24500F8B24A /* PotionCompendiumData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0B5D34CC28FED24500F8B24A /* PotionCompendiumData.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0B5D349528F9AB1300F8B24A /* PotionCompendium.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PotionCompendium.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B5D349828F9AB1300F8B24A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B5D349A28F9AB1300F8B24A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0B5D349C28F9AB1300F8B24A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0B5D349F28F9AB1300F8B24A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0B5D34A128F9AB1400F8B24A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0B5D34A428F9AB1400F8B24A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0B5D34A628F9AB1400F8B24A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0B5D34B028FD8B2D00F8B24A /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		0B5D34B228FD8B3B00F8B24A /* Potion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Potion.swift; sourceTree = "<group>"; };
+		0B5D34B428FD8B5400F8B24A /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		0B5D34B928FD8BA900F8B24A /* IngredientsGatheringViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsGatheringViewController.swift; sourceTree = "<group>"; };
+		0B5D34BB28FD8BC500F8B24A /* IngredientsGatheringView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsGatheringView.swift; sourceTree = "<group>"; };
+		0B5D34BD28FD8C2300F8B24A /* PotionBrewingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotionBrewingViewController.swift; sourceTree = "<group>"; };
+		0B5D34BF28FD8CE300F8B24A /* PotionBrewingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotionBrewingView.swift; sourceTree = "<group>"; };
+		0B5D34C128FD8CF900F8B24A /* UnlockedPotionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockedPotionsViewController.swift; sourceTree = "<group>"; };
+		0B5D34C328FD8D0A00F8B24A /* UnlockedPotionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockedPotionsView.swift; sourceTree = "<group>"; };
+		0B5D34C528FD91FF00F8B24A /* IngredientsGatheringViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsGatheringViewModel.swift; sourceTree = "<group>"; };
+		0B5D34C728FD920F00F8B24A /* PotionBrewingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotionBrewingViewModel.swift; sourceTree = "<group>"; };
+		0B5D34C928FD922F00F8B24A /* UnlockedPotionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockedPotionsViewModel.swift; sourceTree = "<group>"; };
+		0B5D34CD28FED24500F8B24A /* PotionCompendiumData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PotionCompendiumData.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +78,74 @@
 		0B5D349728F9AB1300F8B24A /* PotionCompendium */ = {
 			isa = PBXGroup;
 			children = (
+				0B5D34AD28FD8AE100F8B24A /* Model */,
+				0B5D34AE28FD8AE900F8B24A /* View */,
+				0B5D34AF28FD8AEE00F8B24A /* ViewModel */,
 				0B5D349828F9AB1300F8B24A /* AppDelegate.swift */,
 				0B5D349A28F9AB1300F8B24A /* SceneDelegate.swift */,
-				0B5D349C28F9AB1300F8B24A /* ViewController.swift */,
-				0B5D349E28F9AB1300F8B24A /* Main.storyboard */,
 				0B5D34A128F9AB1400F8B24A /* Assets.xcassets */,
 				0B5D34A328F9AB1400F8B24A /* LaunchScreen.storyboard */,
 				0B5D34A628F9AB1400F8B24A /* Info.plist */,
+				0B5D34CC28FED24500F8B24A /* PotionCompendiumData.xcdatamodeld */,
 			);
 			path = PotionCompendium;
+			sourceTree = "<group>";
+		};
+		0B5D34AD28FD8AE100F8B24A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0B5D34B028FD8B2D00F8B24A /* APIManager.swift */,
+				0B5D34B228FD8B3B00F8B24A /* Potion.swift */,
+				0B5D34B428FD8B5400F8B24A /* Ingredient.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0B5D34AE28FD8AE900F8B24A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0B5D34B628FD8B5D00F8B24A /* IngredientsGathering */,
+				0B5D34B728FD8B7E00F8B24A /* PotionBrewing */,
+				0B5D34B828FD8B8600F8B24A /* UnlockedPotions */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0B5D34AF28FD8AEE00F8B24A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0B5D34C528FD91FF00F8B24A /* IngredientsGatheringViewModel.swift */,
+				0B5D34C728FD920F00F8B24A /* PotionBrewingViewModel.swift */,
+				0B5D34C928FD922F00F8B24A /* UnlockedPotionsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0B5D34B628FD8B5D00F8B24A /* IngredientsGathering */ = {
+			isa = PBXGroup;
+			children = (
+				0B5D34B928FD8BA900F8B24A /* IngredientsGatheringViewController.swift */,
+				0B5D34BB28FD8BC500F8B24A /* IngredientsGatheringView.swift */,
+			);
+			path = IngredientsGathering;
+			sourceTree = "<group>";
+		};
+		0B5D34B728FD8B7E00F8B24A /* PotionBrewing */ = {
+			isa = PBXGroup;
+			children = (
+				0B5D34BD28FD8C2300F8B24A /* PotionBrewingViewController.swift */,
+				0B5D34BF28FD8CE300F8B24A /* PotionBrewingView.swift */,
+			);
+			path = PotionBrewing;
+			sourceTree = "<group>";
+		};
+		0B5D34B828FD8B8600F8B24A /* UnlockedPotions */ = {
+			isa = PBXGroup;
+			children = (
+				0B5D34C128FD8CF900F8B24A /* UnlockedPotionsViewController.swift */,
+				0B5D34C328FD8D0A00F8B24A /* UnlockedPotionsView.swift */,
+			);
+			path = UnlockedPotions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,6 +158,7 @@
 				0B5D349128F9AB1300F8B24A /* Sources */,
 				0B5D349228F9AB1300F8B24A /* Frameworks */,
 				0B5D349328F9AB1300F8B24A /* Resources */,
+				0B5D34CB28FD955A00F8B24A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -127,34 +209,57 @@
 			files = (
 				0B5D34A528F9AB1400F8B24A /* LaunchScreen.storyboard in Resources */,
 				0B5D34A228F9AB1400F8B24A /* Assets.xcassets in Resources */,
-				0B5D34A028F9AB1300F8B24A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0B5D34CB28FD955A00F8B24A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint PotionCompendium/*\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0B5D349128F9AB1300F8B24A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B5D349D28F9AB1300F8B24A /* ViewController.swift in Sources */,
+				0B5D34B128FD8B2D00F8B24A /* APIManager.swift in Sources */,
+				0B5D34B528FD8B5400F8B24A /* Ingredient.swift in Sources */,
+				0B5D34C228FD8CF900F8B24A /* UnlockedPotionsViewController.swift in Sources */,
+				0B5D34CA28FD922F00F8B24A /* UnlockedPotionsViewModel.swift in Sources */,
+				0B5D34BE28FD8C2300F8B24A /* PotionBrewingViewController.swift in Sources */,
+				0B5D34C628FD91FF00F8B24A /* IngredientsGatheringViewModel.swift in Sources */,
 				0B5D349928F9AB1300F8B24A /* AppDelegate.swift in Sources */,
+				0B5D34BC28FD8BC500F8B24A /* IngredientsGatheringView.swift in Sources */,
+				0B5D34BA28FD8BA900F8B24A /* IngredientsGatheringViewController.swift in Sources */,
+				0B5D34C428FD8D0A00F8B24A /* UnlockedPotionsView.swift in Sources */,
+				0B5D34C828FD920F00F8B24A /* PotionBrewingViewModel.swift in Sources */,
 				0B5D349B28F9AB1300F8B24A /* SceneDelegate.swift in Sources */,
+				0B5D34C028FD8CE300F8B24A /* PotionBrewingView.swift in Sources */,
+				0B5D34CE28FED24500F8B24A /* PotionCompendiumData.xcdatamodeld in Sources */,
+				0B5D34B328FD8B3B00F8B24A /* Potion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		0B5D349E28F9AB1300F8B24A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0B5D349F28F9AB1300F8B24A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		0B5D34A328F9AB1400F8B24A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -292,7 +397,6 @@
 				INFOPLIST_FILE = PotionCompendium/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -320,7 +424,6 @@
 				INFOPLIST_FILE = PotionCompendium/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -358,6 +461,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		0B5D34CC28FED24500F8B24A /* PotionCompendiumData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0B5D34CD28FED24500F8B24A /* PotionCompendiumData.xcdatamodel */,
+			);
+			currentVersion = 0B5D34CD28FED24500F8B24A /* PotionCompendiumData.xcdatamodel */;
+			path = PotionCompendiumData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0B5D348D28F9AB1300F8B24A /* Project object */;
 }
