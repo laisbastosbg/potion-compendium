@@ -17,7 +17,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = UnlockedPotionsViewController()
+        let viewController = UINavigationController(rootViewController: IngredientsGatheringViewController())
+        window.rootViewController = viewController
+//        window.rootViewController = PotionBrewingViewController()
         self.window = window
         window.makeKeyAndVisible()
     }
