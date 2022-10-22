@@ -6,44 +6,15 @@
 //
 
 import UIKit
-import AVFAudio
 
 class IngredientsGatheringView: UIView {
     var animator: UIDynamicAnimator!
     var gravity: UIGravityBehavior!
     var collision: UICollisionBehavior!
 
-    var backgroundMusicPlayer: AVAudioPlayer? {
-        get {
-            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-                fatalError()
-            }
-            return appDelegate.backgroundMusicPlayer
-        }
-        set {
-            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-                fatalError()
-            }
-            appDelegate.backgroundMusicPlayer = newValue
-        }
-    }
-
     var fallenIngredientsCounter = 0
-    
-    var isSoundOn: Bool = true {
-        didSet {
-            let image: UIImage?
-            if isSoundOn {
-                image = UIImage(named: "sound_on")
-                backgroundMusicPlayer?.play()
-            } else {
-                image = UIImage(named: "sound_off")
-                backgroundMusicPlayer?.stop()
-            }
 
-            self.disableMusicButton.setImage(image, for: .normal)
-        }
-    }
+    let appUI = AppUI.shared
 
     lazy var basket: UIImageView = {
         let image = UIImageView(frame: CGRect(
@@ -53,16 +24,6 @@ class IngredientsGatheringView: UIView {
             height: 100))
         image.image = UIImage(named: "basket")
         return image
-    }()
-
-    lazy var disableMusicButton: UIButton = {
-        let button = UIButton()
-        let image = UIImage(named: "sound_on")
-        button.setImage(image, for: .normal)
-        button.tintColor = .white
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(toggleAudio), for: .touchUpInside)
-        return button
     }()
 
     let backgroundImage: BackgroundImage = {
@@ -115,9 +76,9 @@ class IngredientsGatheringView: UIView {
             for: .touchUpInside)
 
         self.addSubview(backgroundImage)
+        self.addSubview(appUI)
         self.addSubview(basket)
         self.addSubview(startingMesage)
-        self.addSubview(disableMusicButton)
         self.addSubview(progressBar)
 
         clockView.label.text = getSecondsAsMinutesAndSeconds(Double(remainingTime))
@@ -139,11 +100,6 @@ class IngredientsGatheringView: UIView {
             startingMesage.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.2),
             startingMesage.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.65),
 
-            disableMusicButton.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
-            disableMusicButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
-            disableMusicButton.widthAnchor.constraint(equalToConstant: 28),
-            disableMusicButton.heightAnchor.constraint(equalTo: disableMusicButton.widthAnchor),
-
             progressBar.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
             progressBar.centerYAnchor.constraint(equalTo: self.centerYAnchor),
 
@@ -159,11 +115,6 @@ class IngredientsGatheringView: UIView {
     func startGathering() {
         self.startingMesage.removeFromSuperview()
         setTimer()
-    }
-
-    @objc
-    func toggleAudio() {
-        self.isSoundOn.toggle()
     }
 
     func getSecondsAsMinutesAndSeconds(_ seconds: Double) -> String? {

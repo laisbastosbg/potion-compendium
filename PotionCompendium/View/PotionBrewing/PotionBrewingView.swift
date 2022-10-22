@@ -16,10 +16,13 @@ class PotionBrewingView: UIView {
         return imageView
     }()
 
+    let appUI = AppUI.shared
+
     override init(frame: CGRect) {
         super.init(frame: frame)
 
         self.addSubview(backgroundImage)
+        self.addSubview(appUI)
 //        setConstraints()
     }
 
@@ -28,19 +31,6 @@ class PotionBrewingView: UIView {
     }
 
     func setConstraints() {
-        NSLayoutConstraint.activate([
-            backgroundImage.topAnchor.constraint(equalTo: self.topAnchor),
-            backgroundImage.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            backgroundImage.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            backgroundImage.trailingAnchor.constraint(equalTo: self.trailingAnchor)])
+        NSLayoutConstraint.activate([])
     }
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-
 }
