@@ -26,12 +26,7 @@ class IngredientsGatheringView: UIView {
         return image
     }()
 
-    let backgroundImage: BackgroundImage = {
-        let imageView = BackgroundImage()
-        imageView.image = UIImage(named: "forest_at_night")
-        return imageView
-    }()
-
+    let backgroundView = BackgroundView()
     lazy var startingMesage = StartingMessageView()
 
     let clockView = ClockView()
@@ -75,7 +70,8 @@ class IngredientsGatheringView: UIView {
             action: #selector(startGathering),
             for: .touchUpInside)
 
-        self.addSubview(backgroundImage)
+        self.backgroundView.image = UIImage(named: "forest_at_night")
+        self.addSubview(backgroundView)
         self.addSubview(appUI)
         self.addSubview(basket)
         self.addSubview(startingMesage)
@@ -171,7 +167,7 @@ class IngredientsGatheringView: UIView {
         ingredientIcon.image = UIImage(named: "ingredient-\(Int.random(in: 1...8))")
         self.addSubview(ingredientIcon)
         self.sendSubviewToBack(ingredientIcon)
-        self.sendSubviewToBack(backgroundImage)
+        self.sendSubviewToBack(backgroundView)
 
         return ingredientIcon
     }

@@ -27,7 +27,7 @@
 		0B5D34FF290220F100F8B24A /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5D34FE290220F100F8B24A /* ProgressBar.swift */; };
 		0B5D350129023BDC00F8B24A /* StartingMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5D350029023BDC00F8B24A /* StartingMessage.swift */; };
 		0B5D35032902D4A200F8B24A /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5D35022902D4A200F8B24A /* ClockView.swift */; };
-		0B5D3506290484A700F8B24A /* BackgroundImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5D3505290484A700F8B24A /* BackgroundImage.swift */; };
+		0B5D3506290484A700F8B24A /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5D3505290484A700F8B24A /* BackgroundView.swift */; };
 		0B5D35092904885300F8B24A /* AppUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5D35082904885300F8B24A /* AppUI.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,7 +54,7 @@
 		0B5D34FE290220F100F8B24A /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		0B5D350029023BDC00F8B24A /* StartingMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartingMessage.swift; sourceTree = "<group>"; };
 		0B5D35022902D4A200F8B24A /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
-		0B5D3505290484A700F8B24A /* BackgroundImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImage.swift; sourceTree = "<group>"; };
+		0B5D3505290484A700F8B24A /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		0B5D35082904885300F8B24A /* AppUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -174,7 +174,7 @@
 		0B5D35042904848400F8B24A /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				0B5D3505290484A700F8B24A /* BackgroundImage.swift */,
+				0B5D3505290484A700F8B24A /* BackgroundView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -296,7 +296,7 @@
 				0B5D34C828FD920F00F8B24A /* PotionBrewingViewModel.swift in Sources */,
 				0B5D349B28F9AB1300F8B24A /* SceneDelegate.swift in Sources */,
 				0B5D34C028FD8CE300F8B24A /* PotionBrewingView.swift in Sources */,
-				0B5D3506290484A700F8B24A /* BackgroundImage.swift in Sources */,
+				0B5D3506290484A700F8B24A /* BackgroundView.swift in Sources */,
 				0B5D34B328FD8B3B00F8B24A /* Potion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

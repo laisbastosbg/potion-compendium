@@ -1,5 +1,5 @@
 //
-//  BackgroundImage.swift
+//  BackgroundView.swift
 //  PotionCompendium
 //
 //  Created by Lais Godinho on 22/10/22.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BackgroundImage: UIImageView {
+class BackgroundView: UIImageView {
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
