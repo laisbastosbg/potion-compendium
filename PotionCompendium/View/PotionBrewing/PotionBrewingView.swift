@@ -8,13 +8,11 @@
 import UIKit
 
 class PotionBrewingView: UIView {
+    let collectedIngredientsPercentage = 0
 
-    let backgroundImage: UIImageView = {
-        let imageView = UIImageView()
+    let backgroundImage: BackgroundImage = {
+        let imageView = BackgroundImage()
         imageView.image = UIImage(named: "laboratory")
-        imageView.clipsToBounds = true
-        imageView.contentMode = .scaleAspectFill
-        imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
 
@@ -22,7 +20,7 @@ class PotionBrewingView: UIView {
         super.init(frame: frame)
 
         self.addSubview(backgroundImage)
-        setConstraints()
+//        setConstraints()
     }
 
     required init?(coder: NSCoder) {

@@ -24,6 +24,7 @@ class ProgressBar: UIView {
         self.layer.borderColor = UIColor(named: "border")?.cgColor
         self.layer.borderWidth = 4
         self.layer.cornerRadius = 4
+        self.layer.opacity = 0.75
         self.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(progressMade)
         progressMadeHeightConstraint = NSLayoutConstraint(

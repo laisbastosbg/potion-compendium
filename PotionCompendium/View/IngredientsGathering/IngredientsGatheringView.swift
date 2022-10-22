@@ -13,7 +13,7 @@ class IngredientsGatheringView: UIView {
     var gravity: UIGravityBehavior!
     var collision: UICollisionBehavior!
 
-    var backgroundMusicPlayer : AVAudioPlayer? {
+    var backgroundMusicPlayer: AVAudioPlayer? {
         get {
             guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
                 fatalError()
@@ -29,6 +29,7 @@ class IngredientsGatheringView: UIView {
     }
 
     var fallenIngredientsCounter = 0
+    
     var isSoundOn: Bool = true {
         didSet {
             let image: UIImage?
@@ -64,12 +65,9 @@ class IngredientsGatheringView: UIView {
         return button
     }()
 
-    let backgroundImage: UIImageView = {
-        let imageView = UIImageView()
+    let backgroundImage: BackgroundImage = {
+        let imageView = BackgroundImage()
         imageView.image = UIImage(named: "forest_at_night")
-        imageView.clipsToBounds = true
-        imageView.contentMode = .scaleAspectFill
-        imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
 
@@ -145,11 +143,6 @@ class IngredientsGatheringView: UIView {
             disableMusicButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             disableMusicButton.widthAnchor.constraint(equalToConstant: 28),
             disableMusicButton.heightAnchor.constraint(equalTo: disableMusicButton.widthAnchor),
-
-            backgroundImage.topAnchor.constraint(equalTo: self.topAnchor),
-            backgroundImage.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            backgroundImage.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            backgroundImage.trailingAnchor.constraint(equalTo: self.trailingAnchor),
 
             progressBar.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
             progressBar.centerYAnchor.constraint(equalTo: self.centerYAnchor),
