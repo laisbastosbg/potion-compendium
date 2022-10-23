@@ -9,6 +9,7 @@ import UIKit
 
 class PotionBrewingViewController: UIViewController {
     var screen: PotionBrewingView?
+    var ingredients: [Ingredient] = Ingredient.mockedData
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,5 +21,11 @@ class PotionBrewingViewController: UIViewController {
             height: self.view.bounds.height))
 
         self.view = screen!
+
+//        self.screen!.addSubview(tableView)
     }
+}
+
+extension PotionBrewingViewController: UITableViewDelegate {
+
 }

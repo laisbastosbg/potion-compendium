@@ -29,6 +29,10 @@
 		0B5D35032902D4A200F8B24A /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5D35022902D4A200F8B24A /* ClockView.swift */; };
 		0B5D3506290484A700F8B24A /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5D3505290484A700F8B24A /* BackgroundView.swift */; };
 		0B5D35092904885300F8B24A /* AppUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5D35082904885300F8B24A /* AppUI.swift */; };
+		0B5D350C29049A0300F8B24A /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 0B5D350B29049A0300F8B24A /* Lottie */; };
+		0B5D35122904A00100F8B24A /* IngredientsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5D35112904A00100F8B24A /* IngredientsTableViewCell.swift */; };
+		0B5D35142904A27B00F8B24A /* IngredientsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5D35132904A27B00F8B24A /* IngredientsTableView.swift */; };
+		0B5D35162904B23200F8B24A /* CauldronAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5D35152904B23200F8B24A /* CauldronAnimation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +60,9 @@
 		0B5D35022902D4A200F8B24A /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
 		0B5D3505290484A700F8B24A /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		0B5D35082904885300F8B24A /* AppUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUI.swift; sourceTree = "<group>"; };
+		0B5D35112904A00100F8B24A /* IngredientsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsTableViewCell.swift; sourceTree = "<group>"; };
+		0B5D35132904A27B00F8B24A /* IngredientsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsTableView.swift; sourceTree = "<group>"; };
+		0B5D35152904B23200F8B24A /* CauldronAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CauldronAnimation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B5D350C29049A0300F8B24A /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +153,7 @@
 		0B5D34B728FD8B7E00F8B24A /* PotionBrewing */ = {
 			isa = PBXGroup;
 			children = (
+				0B5D350D29049FA800F8B24A /* Components */,
 				0B5D34BD28FD8C2300F8B24A /* PotionBrewingViewController.swift */,
 				0B5D34BF28FD8CE300F8B24A /* PotionBrewingView.swift */,
 			);
@@ -187,6 +196,24 @@
 			path = AppUI;
 			sourceTree = "<group>";
 		};
+		0B5D350D29049FA800F8B24A /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				0B5D350E29049FAF00F8B24A /* IngredientsTableView */,
+				0B5D35152904B23200F8B24A /* CauldronAnimation.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		0B5D350E29049FAF00F8B24A /* IngredientsTableView */ = {
+			isa = PBXGroup;
+			children = (
+				0B5D35112904A00100F8B24A /* IngredientsTableViewCell.swift */,
+				0B5D35132904A27B00F8B24A /* IngredientsTableView.swift */,
+			);
+			path = IngredientsTableView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -204,6 +231,9 @@
 			dependencies = (
 			);
 			name = PotionCompendium;
+			packageProductDependencies = (
+				0B5D350B29049A0300F8B24A /* Lottie */,
+			);
 			productName = PotionCompendium;
 			productReference = 0B5D349528F9AB1300F8B24A /* PotionCompendium.app */;
 			productType = "com.apple.product-type.application";
@@ -232,6 +262,9 @@
 				Base,
 			);
 			mainGroup = 0B5D348C28F9AB1300F8B24A;
+			packageReferences = (
+				0B5D350A29049A0300F8B24A /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = 0B5D349628F9AB1300F8B24A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -287,16 +320,19 @@
 				0B5D34FB29001B7700F8B24A /* IngredientIcon.swift in Sources */,
 				0B5D34BE28FD8C2300F8B24A /* PotionBrewingViewController.swift in Sources */,
 				0B5D35032902D4A200F8B24A /* ClockView.swift in Sources */,
+				0B5D35122904A00100F8B24A /* IngredientsTableViewCell.swift in Sources */,
 				0B5D34FF290220F100F8B24A /* ProgressBar.swift in Sources */,
 				0B5D34C628FD91FF00F8B24A /* IngredientsGatheringViewModel.swift in Sources */,
 				0B5D349928F9AB1300F8B24A /* AppDelegate.swift in Sources */,
 				0B5D34BC28FD8BC500F8B24A /* IngredientsGatheringView.swift in Sources */,
+				0B5D35162904B23200F8B24A /* CauldronAnimation.swift in Sources */,
 				0B5D34BA28FD8BA900F8B24A /* IngredientsGatheringViewController.swift in Sources */,
 				0B5D34C428FD8D0A00F8B24A /* UnlockedPotionsView.swift in Sources */,
 				0B5D34C828FD920F00F8B24A /* PotionBrewingViewModel.swift in Sources */,
 				0B5D349B28F9AB1300F8B24A /* SceneDelegate.swift in Sources */,
 				0B5D34C028FD8CE300F8B24A /* PotionBrewingView.swift in Sources */,
 				0B5D3506290484A700F8B24A /* BackgroundView.swift in Sources */,
+				0B5D35142904A27B00F8B24A /* IngredientsTableView.swift in Sources */,
 				0B5D34B328FD8B3B00F8B24A /* Potion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -511,6 +547,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0B5D350A29049A0300F8B24A /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0B5D350B29049A0300F8B24A /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0B5D350A29049A0300F8B24A /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0B5D348D28F9AB1300F8B24A /* Project object */;
 }

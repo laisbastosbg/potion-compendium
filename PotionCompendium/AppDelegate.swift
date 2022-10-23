@@ -46,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             } catch let error as NSError {
                 print(error.localizedDescription)
             }
-            backgroundMusicPlayer?.play()
+//            backgroundMusicPlayer?.play()
             backgroundMusicPlayer?.numberOfLoops = -1
         }
     }
