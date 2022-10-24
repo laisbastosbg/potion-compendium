@@ -7,9 +7,19 @@
 
 import Foundation
 
-struct Ingredient: Codable {
+struct Ingredient: Codable, Equatable {
     let id: String?
     let name: String?
+
+    static func == (object1: Ingredient, object2: Ingredient) -> Bool {
+//        print("aqui")
+//        print(object1)
+//        print("=========")
+//        print(object2)
+        if object1.id != object2.id { return false }
+        if object1.name != object2.name { return false}
+        return true
+    }
 }
 
 extension Ingredient {

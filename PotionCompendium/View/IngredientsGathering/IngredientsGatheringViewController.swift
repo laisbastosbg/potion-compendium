@@ -19,6 +19,11 @@ class IngredientsGatheringViewController: UIViewController {
                 return
             }
 
+//            100 -> 200
+//            X -> qtdColetada
+//            200X = 100qtdColetada
+//            x = 100qtdColeta/200
+
             let maxHeight = self.screen?.progressBar.frame.height
             self.collectedIngredientsPercentage = collectedIngredientsCounter * Int(progressBarHeight) / 100
 
@@ -55,6 +60,7 @@ class IngredientsGatheringViewController: UIViewController {
 
     func nextPhase() {
         let nextScreen = PotionBrewingViewController()
+        nextScreen.collectedIngredientsPercentage = self.collectedIngredientsCounter
         self.navigationController?.isNavigationBarHidden = true
         self.navigationController?.pushViewController(nextScreen, animated: true)
     }

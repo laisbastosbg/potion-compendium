@@ -33,8 +33,8 @@ class IngredientsGatheringView: UIView {
 
     let progressBar = ProgressBar()
 
-//    lazy var remainingTime = 60 {
-    lazy var remainingTime = 1 {
+    lazy var remainingTime = 60 {
+//    lazy var remainingTime = 1 {
         didSet {
             clockView.label.text = getSecondsAsMinutesAndSeconds(Double(remainingTime))
 
@@ -73,6 +73,7 @@ class IngredientsGatheringView: UIView {
 
         self.backgroundView.image = UIImage(named: "forest_at_night")
         self.addSubview(backgroundView)
+        self.addSubview(appUI)
         self.addSubview(basket)
         self.addSubview(progressBar)
 
@@ -84,7 +85,6 @@ class IngredientsGatheringView: UIView {
         collision = UICollisionBehavior(items: [])
         addGravityBehavior()
         addCollisionBehavior()
-        self.addSubview(appUI)
         self.addSubview(startingMesage)
 
         setConstraints()

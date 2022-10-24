@@ -16,7 +16,11 @@ class IngredientsTableView: UITableView {
             IngredientsTableViewCell.self,
             forCellReuseIdentifier: IngredientsTableViewCell.identifier)
         self.translatesAutoresizingMaskIntoConstraints = false
-//        self.backgroundColor = .systemMint
+        self.backgroundColor = UIColor(named: "background")
+        self.layer.borderColor = UIColor(named: "border")?.cgColor
+        self.layer.borderWidth = 4
+        self.layer.cornerRadius = 4
+        self.allowsMultipleSelection = true
     }
 
     required init?(coder: NSCoder) {
