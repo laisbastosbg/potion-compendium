@@ -19,11 +19,6 @@ class IngredientsGatheringViewController: UIViewController {
                 return
             }
 
-//            100 -> 200
-//            X -> qtdColetada
-//            200X = 100qtdColetada
-//            x = 100qtdColeta/200
-
             let maxHeight = self.screen?.progressBar.frame.height
             self.collectedIngredientsPercentage = collectedIngredientsCounter * Int(progressBarHeight) / 100
 
