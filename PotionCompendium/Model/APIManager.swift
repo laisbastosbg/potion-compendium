@@ -44,4 +44,35 @@ class APIManager {
         }
         task.resume()
     }
+
+    func getIngredients(
+        succesHandler: @escaping ([Ingredient]) -> Void,
+        errorHandler: @escaping (Error) -> Void) {
+        guard let apiURL = URL(string: "\(baseURL)/ingredients") else { fatalError("missing url")}
+
+        let task = URLSession.shared.dataTask(with: URLRequest(url: apiURL)) { (data, _, error) in
+            if error != nil {
+                print("Error: \(error!)")
+                return
+            }
+
+            guard let data = data else {
+                DispatchQueue.main.async {
+                    errorHandler(NSError(domain: "", code: 0, userInfo: nil))
+                }
+                return
+            }
+
+            do {
+                let ingredients = try APIManager.jsonDecoder.decode([Ingredient].self, from: data)
+
+                DispatchQueue.main.async {
+                    succesHandler(ingredients)
+                }
+            } catch {
+                print(error)
+            }
+        }
+        task.resume()
+    }
 }

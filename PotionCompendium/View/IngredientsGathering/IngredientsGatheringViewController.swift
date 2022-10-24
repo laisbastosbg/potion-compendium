@@ -11,20 +11,27 @@ import AVFAudio
 class IngredientsGatheringViewController: UIViewController {
     var screen: IngredientsGatheringView?
 
+    var collectedIngredientsPercentage = 0
+
     var collectedIngredientsCounter = 0 {
         didSet {
-            guard let progressBarHeight = screen?.progressBar.frame.height else {
+            guard let progressBarHeight = self.screen?.progressBar.frame.height else {
                 return
             }
 
-            let maxHeight = screen?.progressBar.frame.height
-            let collectedIngredientsPercentage = collectedIngredientsCounter * Int(progressBarHeight) / 100
+//            100 -> 200
+//            X -> qtdColetada
+//            200X = 100qtdColetada
+//            x = 100qtdColeta/200
+
+            let maxHeight = self.screen?.progressBar.frame.height
+            self.collectedIngredientsPercentage = collectedIngredientsCounter * Int(progressBarHeight) / 100
 
             if (Double(collectedIngredientsPercentage) <= Double(maxHeight!)) {
-                screen?.progressBar.progressMadeHeightConstraint
+                self.screen?.progressBar.progressMadeHeightConstraint
                     .constant = CGFloat(collectedIngredientsPercentage)
             } else {
-                screen?.remainingTime = 0
+                self.screen?.remainingTime = 0
             }
         }
     }
@@ -33,11 +40,7 @@ class IngredientsGatheringViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        screen = IngredientsGatheringView(frame: CGRect(
-            x: self.view.bounds.midX,
-            y: self.view.bounds.midY,
-            width: self.view.bounds.width,
-            height: self.view.bounds.height))
+        screen = IngredientsGatheringView(frame: UIScreen.main.bounds)
         self.view = screen!
         self.screen!.collision?.collisionDelegate = self
         self.screen?.actionWhenPhaseOver = nextPhase
@@ -57,6 +60,7 @@ class IngredientsGatheringViewController: UIViewController {
 
     func nextPhase() {
         let nextScreen = PotionBrewingViewController()
+        nextScreen.collectedIngredientsPercentage = self.collectedIngredientsCounter
         self.navigationController?.isNavigationBarHidden = true
         self.navigationController?.pushViewController(nextScreen, animated: true)
     }

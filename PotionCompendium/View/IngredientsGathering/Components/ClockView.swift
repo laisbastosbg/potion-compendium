@@ -28,6 +28,7 @@ class ClockView: UIView {
         super.init(frame: frame)
 
         self.translatesAutoresizingMaskIntoConstraints = false
+        self.layer.opacity = 0.75
         self.addSubview(image)
         self.addSubview((label))
         setConstraints()

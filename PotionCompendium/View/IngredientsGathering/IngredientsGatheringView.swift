@@ -6,43 +6,15 @@
 //
 
 import UIKit
-import AVFAudio
 
 class IngredientsGatheringView: UIView {
     var animator: UIDynamicAnimator!
     var gravity: UIGravityBehavior!
     var collision: UICollisionBehavior!
 
-    var backgroundMusicPlayer : AVAudioPlayer? {
-        get {
-            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-                fatalError()
-            }
-            return appDelegate.backgroundMusicPlayer
-        }
-        set {
-            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-                fatalError()
-            }
-            appDelegate.backgroundMusicPlayer = newValue
-        }
-    }
-
     var fallenIngredientsCounter = 0
-    var isSoundOn: Bool = true {
-        didSet {
-            let image: UIImage?
-            if isSoundOn {
-                image = UIImage(named: "sound_on")
-                backgroundMusicPlayer?.play()
-            } else {
-                image = UIImage(named: "sound_off")
-                backgroundMusicPlayer?.stop()
-            }
 
-            self.disableMusicButton.setImage(image, for: .normal)
-        }
-    }
+    let appUI = AppUI.shared
 
     lazy var basket: UIImageView = {
         let image = UIImageView(frame: CGRect(
@@ -54,25 +26,7 @@ class IngredientsGatheringView: UIView {
         return image
     }()
 
-    lazy var disableMusicButton: UIButton = {
-        let button = UIButton()
-        let image = UIImage(named: "sound_on")
-        button.setImage(image, for: .normal)
-        button.tintColor = .white
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(toggleAudio), for: .touchUpInside)
-        return button
-    }()
-
-    let backgroundImage: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "forest_at_night")
-        imageView.clipsToBounds = true
-        imageView.contentMode = .scaleAspectFill
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
-    }()
-
+    let backgroundView = BackgroundView()
     lazy var startingMesage = StartingMessageView()
 
     let clockView = ClockView()
@@ -80,6 +34,7 @@ class IngredientsGatheringView: UIView {
     let progressBar = ProgressBar()
 
     lazy var remainingTime = 60 {
+//    lazy var remainingTime = 1 {
         didSet {
             clockView.label.text = getSecondsAsMinutesAndSeconds(Double(remainingTime))
 
@@ -116,22 +71,23 @@ class IngredientsGatheringView: UIView {
             action: #selector(startGathering),
             for: .touchUpInside)
 
-        self.addSubview(backgroundImage)
+        self.backgroundView.image = UIImage(named: "forest_at_night")
+        self.addSubview(backgroundView)
+        self.addSubview(appUI)
         self.addSubview(basket)
-        self.addSubview(startingMesage)
-        self.addSubview(disableMusicButton)
         self.addSubview(progressBar)
 
         clockView.label.text = getSecondsAsMinutesAndSeconds(Double(remainingTime))
         self.addSubview(clockView)
-
-        setConstraints()
 
         animator = UIDynamicAnimator(referenceView: self)
         gravity = UIGravityBehavior(items: [])
         collision = UICollisionBehavior(items: [])
         addGravityBehavior()
         addCollisionBehavior()
+        self.addSubview(startingMesage)
+
+        setConstraints()
     }
 
     func setConstraints() {
@@ -140,16 +96,6 @@ class IngredientsGatheringView: UIView {
             startingMesage.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             startingMesage.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.2),
             startingMesage.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.65),
-
-            disableMusicButton.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
-            disableMusicButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
-            disableMusicButton.widthAnchor.constraint(equalToConstant: 28),
-            disableMusicButton.heightAnchor.constraint(equalTo: disableMusicButton.widthAnchor),
-
-            backgroundImage.topAnchor.constraint(equalTo: self.topAnchor),
-            backgroundImage.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            backgroundImage.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            backgroundImage.trailingAnchor.constraint(equalTo: self.trailingAnchor),
 
             progressBar.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
             progressBar.centerYAnchor.constraint(equalTo: self.centerYAnchor),
@@ -166,11 +112,6 @@ class IngredientsGatheringView: UIView {
     func startGathering() {
         self.startingMesage.removeFromSuperview()
         setTimer()
-    }
-
-    @objc
-    func toggleAudio() {
-        self.isSoundOn.toggle()
     }
 
     func getSecondsAsMinutesAndSeconds(_ seconds: Double) -> String? {
@@ -227,7 +168,7 @@ class IngredientsGatheringView: UIView {
         ingredientIcon.image = UIImage(named: "ingredient-\(Int.random(in: 1...8))")
         self.addSubview(ingredientIcon)
         self.sendSubviewToBack(ingredientIcon)
-        self.sendSubviewToBack(backgroundImage)
+        self.sendSubviewToBack(backgroundView)
 
         return ingredientIcon
     }

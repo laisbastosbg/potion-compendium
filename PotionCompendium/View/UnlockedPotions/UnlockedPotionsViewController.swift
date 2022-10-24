@@ -19,7 +19,7 @@ class UnlockedPotionsViewController: UIViewController {
         return table
     }()
 
-    var viewModel = UnlockedPotionsViewModel()
+    var viewModel = PotionViewModel()
 
     private var cancellables: Set<AnyCancellable> = []
 
