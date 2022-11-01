@@ -11,26 +11,6 @@ import AVFAudio
 class IngredientsGatheringViewController: UIViewController {
     var screen: IngredientsGatheringView?
 
-    var collectedIngredientsPercentage = 0
-
-    var collectedIngredientsCounter = 0 {
-        didSet {
-            guard let progressBarHeight = self.screen?.progressBar.frame.height else {
-                return
-            }
-
-            let maxHeight = self.screen?.progressBar.frame.height
-            self.collectedIngredientsPercentage = collectedIngredientsCounter * Int(progressBarHeight) / 100
-
-            if (Double(collectedIngredientsPercentage) <= Double(maxHeight!)) {
-                self.screen?.progressBar.progressMadeHeightConstraint
-                    .constant = CGFloat(collectedIngredientsPercentage)
-            } else {
-                self.screen?.remainingTime = 0
-            }
-        }
-    }
-
     var player: AVAudioPlayer?
 
     override func viewDidLoad() {
@@ -38,7 +18,6 @@ class IngredientsGatheringViewController: UIViewController {
         screen = IngredientsGatheringView(frame: UIScreen.main.bounds)
         self.view = screen!
         self.screen!.collision?.collisionDelegate = self
-        self.screen?.actionWhenPhaseOver = nextPhase
 
         loadAudio()
     }
@@ -53,7 +32,17 @@ class IngredientsGatheringViewController: UIViewController {
         }
     }
 
-    func nextPhase() {
+    func youLostMessage() {
+        let alert = UIAlertController(
+                    title: title,
+                    message: "you lost :(",
+                    preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(
+                    title: "try again",
+                    style: UIAlertAction.Style.default) { _ in
+                        self.screen?.isGameOver = false
+                    })
+                self.present(alert, animated: true, completion: nil)
     }
 
     func getSecondsAsMinutesAndSeconds(_ seconds: Double) -> String? {
@@ -90,7 +79,12 @@ extension IngredientsGatheringViewController: UICollisionBehaviorDelegate {
             guard let screen = self.screen else {
                 return
             }
-            collectedIngredientsCounter += 1
+
+            if item is SpoiledIngredient {
+                self.screen?.isGameOver = true
+                youLostMessage()
+            }
+
             screen.collision.removeItem(item)
     }
 }

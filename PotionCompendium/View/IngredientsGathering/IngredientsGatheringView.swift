@@ -12,7 +12,7 @@ class IngredientsGatheringView: UIView {
     var gravity: UIGravityBehavior!
     var collision: UICollisionBehavior!
 
-    var fallenIngredientsCounter = 0
+//    var fallenIngredientsCounter = 0
 
     let appUI = AppUI.shared
 
@@ -29,35 +29,13 @@ class IngredientsGatheringView: UIView {
     let backgroundView = BackgroundView()
     lazy var startingMesage = StartingMessageView()
 
-    let clockView = ClockView()
-
-    let progressBar = ProgressBar()
-
-    lazy var remainingTime = 60 {
-//    lazy var remainingTime = 1 {
+    var isGameOver: Bool = false {
         didSet {
-            clockView.label.text = getSecondsAsMinutesAndSeconds(Double(remainingTime))
-
-            if remainingTime == 0 {
-                self.collision?.removeAllBoundaries()
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    if self.actionWhenPhaseOver != nil {
-                        self.actionWhenPhaseOver!()
-                    }
-                }
+            if isGameOver == false {
+                setTimer()
             }
         }
     }
-
-    lazy var isBasketFull: Bool = false {
-        didSet {
-            if isBasketFull {
-                self.remainingTime = 0
-            }
-        }
-    }
-
-    var actionWhenPhaseOver: (() -> Void)?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -75,10 +53,6 @@ class IngredientsGatheringView: UIView {
         self.addSubview(backgroundView)
         self.addSubview(appUI)
         self.addSubview(basket)
-        self.addSubview(progressBar)
-
-        clockView.label.text = getSecondsAsMinutesAndSeconds(Double(remainingTime))
-        self.addSubview(clockView)
 
         animator = UIDynamicAnimator(referenceView: self)
         gravity = UIGravityBehavior(items: [])
@@ -95,23 +69,14 @@ class IngredientsGatheringView: UIView {
             startingMesage.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             startingMesage.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             startingMesage.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.2),
-            startingMesage.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.65),
-
-            progressBar.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
-            progressBar.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-
-            clockView.bottomAnchor.constraint(equalTo: progressBar.topAnchor, constant: -8),
-            clockView.centerXAnchor.constraint(equalTo: progressBar.centerXAnchor),
-
-            clockView.heightAnchor.constraint(equalToConstant: 70),
-            clockView.widthAnchor.constraint(equalTo: clockView.heightAnchor)
+            startingMesage.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.65)
         ])
     }
 
     @objc
     func startGathering() {
         self.startingMesage.removeFromSuperview()
-        setTimer()
+        self.isGameOver = false
     }
 
     func getSecondsAsMinutesAndSeconds(_ seconds: Double) -> String? {
@@ -127,11 +92,10 @@ class IngredientsGatheringView: UIView {
     func setTimer() {
         let dropIngredients = dropIngredients()
         _ = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
-            if self.remainingTime <= 0 {
+            if self.isGameOver {
                 dropIngredients.invalidate()
                 timer.invalidate()
             }
-            self.remainingTime -= 1
         }
 
     }
