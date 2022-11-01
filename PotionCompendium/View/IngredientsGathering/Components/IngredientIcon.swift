@@ -19,3 +19,13 @@ class IngredientIcon: UIImageView {
         fatalError("init(coder:) has not been implemented")
     }
 }
+
+class SpoiledIngredient: UIImageView {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+
+    required init?(coder: NSCoder) {
+        return nil
+    }
+}

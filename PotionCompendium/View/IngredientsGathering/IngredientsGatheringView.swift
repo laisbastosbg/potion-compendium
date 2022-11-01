@@ -158,14 +158,24 @@ class IngredientsGatheringView: UIView {
         animator.addBehavior(collision)
     }
 
-    func newIngredient() -> IngredientIcon {
-        let ingredientIcon = IngredientIcon(frame: CGRect(
+    func newIngredient() -> UIImageView {
+        let isSpoiled = Float.random(in: 0...1) > 0.8 ? true : false
+        let frame  = CGRect(
             x: Int.random(in: 0..<350),
             y: -20,
             width: 35,
-            height: 35))
+            height: 35)
+
+        let ingredientIcon = isSpoiled ? SpoiledIngredient(frame: frame) : IngredientIcon(frame: frame)
 
         ingredientIcon.image = UIImage(named: "ingredient-\(Int.random(in: 1...8))")
+
+        if isSpoiled {
+            ingredientIcon.layer.shadowColor = UIColor.green.cgColor
+            ingredientIcon.layer.shadowOpacity = 1
+            ingredientIcon.layer.shadowRadius = 10
+        }
+
         self.addSubview(ingredientIcon)
         self.sendSubviewToBack(ingredientIcon)
         self.sendSubviewToBack(backgroundView)
