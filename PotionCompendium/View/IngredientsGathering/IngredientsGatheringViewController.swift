@@ -54,10 +54,6 @@ class IngredientsGatheringViewController: UIViewController {
     }
 
     func nextPhase() {
-        let nextScreen = PotionBrewingViewController()
-        nextScreen.collectedIngredientsPercentage = self.collectedIngredientsCounter
-        self.navigationController?.isNavigationBarHidden = true
-        self.navigationController?.pushViewController(nextScreen, animated: true)
     }
 
     func getSecondsAsMinutesAndSeconds(_ seconds: Double) -> String? {

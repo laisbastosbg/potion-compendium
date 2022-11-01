@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0B0465AC290506830007014F /* BrewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0465AB290506830007014F /* BrewButton.swift */; };
 		0B5D349928F9AB1300F8B24A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5D349828F9AB1300F8B24A /* AppDelegate.swift */; };
 		0B5D349B28F9AB1300F8B24A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5D349A28F9AB1300F8B24A /* SceneDelegate.swift */; };
 		0B5D34A228F9AB1400F8B24A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B5D34A128F9AB1400F8B24A /* Assets.xcassets */; };
@@ -17,8 +16,6 @@
 		0B5D34B528FD8B5400F8B24A /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5D34B428FD8B5400F8B24A /* Ingredient.swift */; };
 		0B5D34BA28FD8BA900F8B24A /* IngredientsGatheringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5D34B928FD8BA900F8B24A /* IngredientsGatheringViewController.swift */; };
 		0B5D34BC28FD8BC500F8B24A /* IngredientsGatheringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5D34BB28FD8BC500F8B24A /* IngredientsGatheringView.swift */; };
-		0B5D34BE28FD8C2300F8B24A /* PotionBrewingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5D34BD28FD8C2300F8B24A /* PotionBrewingViewController.swift */; };
-		0B5D34C028FD8CE300F8B24A /* PotionBrewingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5D34BF28FD8CE300F8B24A /* PotionBrewingView.swift */; };
 		0B5D34C228FD8CF900F8B24A /* UnlockedPotionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5D34C128FD8CF900F8B24A /* UnlockedPotionsViewController.swift */; };
 		0B5D34C428FD8D0A00F8B24A /* UnlockedPotionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5D34C328FD8D0A00F8B24A /* UnlockedPotionsView.swift */; };
 		0B5D34C828FD920F00F8B24A /* IngredientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5D34C728FD920F00F8B24A /* IngredientViewModel.swift */; };
@@ -30,13 +27,9 @@
 		0B5D3506290484A700F8B24A /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5D3505290484A700F8B24A /* BackgroundView.swift */; };
 		0B5D35092904885300F8B24A /* AppUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5D35082904885300F8B24A /* AppUI.swift */; };
 		0B5D350C29049A0300F8B24A /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 0B5D350B29049A0300F8B24A /* Lottie */; };
-		0B5D35122904A00100F8B24A /* IngredientsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5D35112904A00100F8B24A /* IngredientsTableViewCell.swift */; };
-		0B5D35142904A27B00F8B24A /* IngredientsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5D35132904A27B00F8B24A /* IngredientsTableView.swift */; };
-		0B5D35162904B23200F8B24A /* CauldronAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5D35152904B23200F8B24A /* CauldronAnimation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0B0465AB290506830007014F /* BrewButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewButton.swift; sourceTree = "<group>"; };
 		0B5D349528F9AB1300F8B24A /* PotionCompendium.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PotionCompendium.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B5D349828F9AB1300F8B24A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B5D349A28F9AB1300F8B24A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,8 +41,6 @@
 		0B5D34B428FD8B5400F8B24A /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		0B5D34B928FD8BA900F8B24A /* IngredientsGatheringViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsGatheringViewController.swift; sourceTree = "<group>"; };
 		0B5D34BB28FD8BC500F8B24A /* IngredientsGatheringView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsGatheringView.swift; sourceTree = "<group>"; };
-		0B5D34BD28FD8C2300F8B24A /* PotionBrewingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotionBrewingViewController.swift; sourceTree = "<group>"; };
-		0B5D34BF28FD8CE300F8B24A /* PotionBrewingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotionBrewingView.swift; sourceTree = "<group>"; };
 		0B5D34C128FD8CF900F8B24A /* UnlockedPotionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockedPotionsViewController.swift; sourceTree = "<group>"; };
 		0B5D34C328FD8D0A00F8B24A /* UnlockedPotionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockedPotionsView.swift; sourceTree = "<group>"; };
 		0B5D34C728FD920F00F8B24A /* IngredientViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientViewModel.swift; sourceTree = "<group>"; };
@@ -60,9 +51,6 @@
 		0B5D35022902D4A200F8B24A /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
 		0B5D3505290484A700F8B24A /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		0B5D35082904885300F8B24A /* AppUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUI.swift; sourceTree = "<group>"; };
-		0B5D35112904A00100F8B24A /* IngredientsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsTableViewCell.swift; sourceTree = "<group>"; };
-		0B5D35132904A27B00F8B24A /* IngredientsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsTableView.swift; sourceTree = "<group>"; };
-		0B5D35152904B23200F8B24A /* CauldronAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CauldronAnimation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,7 +112,6 @@
 				0B5D35072904883D00F8B24A /* AppUI */,
 				0B5D35042904848400F8B24A /* Components */,
 				0B5D34B628FD8B5D00F8B24A /* IngredientsGathering */,
-				0B5D34B728FD8B7E00F8B24A /* PotionBrewing */,
 				0B5D34B828FD8B8600F8B24A /* UnlockedPotions */,
 			);
 			path = View;
@@ -147,16 +134,6 @@
 				0B5D34BB28FD8BC500F8B24A /* IngredientsGatheringView.swift */,
 			);
 			path = IngredientsGathering;
-			sourceTree = "<group>";
-		};
-		0B5D34B728FD8B7E00F8B24A /* PotionBrewing */ = {
-			isa = PBXGroup;
-			children = (
-				0B5D350D29049FA800F8B24A /* Components */,
-				0B5D34BD28FD8C2300F8B24A /* PotionBrewingViewController.swift */,
-				0B5D34BF28FD8CE300F8B24A /* PotionBrewingView.swift */,
-			);
-			path = PotionBrewing;
 			sourceTree = "<group>";
 		};
 		0B5D34B828FD8B8600F8B24A /* UnlockedPotions */ = {
@@ -193,25 +170,6 @@
 				0B5D35082904885300F8B24A /* AppUI.swift */,
 			);
 			path = AppUI;
-			sourceTree = "<group>";
-		};
-		0B5D350D29049FA800F8B24A /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				0B5D350E29049FAF00F8B24A /* IngredientsTableView */,
-				0B5D35152904B23200F8B24A /* CauldronAnimation.swift */,
-				0B0465AB290506830007014F /* BrewButton.swift */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
-		0B5D350E29049FAF00F8B24A /* IngredientsTableView */ = {
-			isa = PBXGroup;
-			children = (
-				0B5D35112904A00100F8B24A /* IngredientsTableViewCell.swift */,
-				0B5D35132904A27B00F8B24A /* IngredientsTableView.swift */,
-			);
-			path = IngredientsTableView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,23 +274,17 @@
 				0B5D34C228FD8CF900F8B24A /* UnlockedPotionsViewController.swift in Sources */,
 				0B5D350129023BDC00F8B24A /* StartingMessage.swift in Sources */,
 				0B5D34CA28FD922F00F8B24A /* PotionViewModel.swift in Sources */,
-				0B0465AC290506830007014F /* BrewButton.swift in Sources */,
 				0B5D35092904885300F8B24A /* AppUI.swift in Sources */,
 				0B5D34FB29001B7700F8B24A /* IngredientIcon.swift in Sources */,
-				0B5D34BE28FD8C2300F8B24A /* PotionBrewingViewController.swift in Sources */,
 				0B5D35032902D4A200F8B24A /* ClockView.swift in Sources */,
-				0B5D35122904A00100F8B24A /* IngredientsTableViewCell.swift in Sources */,
 				0B5D34FF290220F100F8B24A /* ProgressBar.swift in Sources */,
 				0B5D349928F9AB1300F8B24A /* AppDelegate.swift in Sources */,
 				0B5D34BC28FD8BC500F8B24A /* IngredientsGatheringView.swift in Sources */,
-				0B5D35162904B23200F8B24A /* CauldronAnimation.swift in Sources */,
 				0B5D34BA28FD8BA900F8B24A /* IngredientsGatheringViewController.swift in Sources */,
 				0B5D34C428FD8D0A00F8B24A /* UnlockedPotionsView.swift in Sources */,
 				0B5D34C828FD920F00F8B24A /* IngredientViewModel.swift in Sources */,
 				0B5D349B28F9AB1300F8B24A /* SceneDelegate.swift in Sources */,
-				0B5D34C028FD8CE300F8B24A /* PotionBrewingView.swift in Sources */,
 				0B5D3506290484A700F8B24A /* BackgroundView.swift in Sources */,
-				0B5D35142904A27B00F8B24A /* IngredientsTableView.swift in Sources */,
 				0B5D34B328FD8B3B00F8B24A /* Potion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
