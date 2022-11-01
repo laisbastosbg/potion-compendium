@@ -123,7 +123,7 @@ class IngredientsGatheringView: UIView {
     }
 
     func newIngredient() -> UIImageView {
-        let isSpoiled = Float.random(in: 0...1) > 0.8 ? true : false
+        let isSpoiled = Float.random(in: 0...1) > 0.7 ? true : false
         let frame  = CGRect(
             x: Int.random(in: 0..<350),
             y: -20,
