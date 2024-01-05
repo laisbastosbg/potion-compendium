@@ -10,8 +10,16 @@ import UIKit
 class StartingMessageView: UIStackView {
     let messageText: UILabel = {
         let label = UILabel()
-        label.text = "Drag the basket to collect the ingredients as they fall"
-        label.font = .preferredFont(forTextStyle: .body)
+        let fullText = """
+            Drag the basket to collect the ingredients as they fall.
+            Watch out for the spoiled ingredients
+        """
+        let fullTextRange = (fullText as NSString).range(of: fullText)
+        let colored = "spoiled ingredients"
+        let coloredRange = (fullText as NSString).range(of: colored)
+        let warning = NSMutableAttributedString(string: fullText)
+        warning.setAttributes([.foregroundColor: UIColor.green], range: coloredRange)
+        label.attributedText = warning
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.numberOfLines = 10

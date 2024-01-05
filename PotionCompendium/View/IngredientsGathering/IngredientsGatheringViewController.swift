@@ -41,6 +41,7 @@ class IngredientsGatheringViewController: UIViewController {
                     title: "try again",
                     style: UIAlertAction.Style.default) { _ in
                         self.screen?.isGameOver = false
+                        self.screen?.appUI.score = 0
                     })
                 self.present(alert, animated: true, completion: nil)
     }
@@ -83,6 +84,8 @@ extension IngredientsGatheringViewController: UICollisionBehaviorDelegate {
             if item is SpoiledIngredient {
                 self.screen?.isGameOver = true
                 youLostMessage()
+            } else {
+                self.screen?.appUI.score += 1
             }
 
             screen.collision.removeItem(item)

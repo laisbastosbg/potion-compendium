@@ -11,6 +11,13 @@ import AVFAudio
 class AppUI: UIView {
     static let shared = AppUI()
 
+    lazy var score = 0 {
+        didSet {
+            self.scoreBadge.text = "\(score)"
+        }
+    }
+    var highScore = 0
+
     var backgroundMusicPlayer: AVAudioPlayer? {
         get {
             guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
@@ -34,6 +41,15 @@ class AppUI: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(toggleAudio), for: .touchUpInside)
         return button
+    }()
+
+    lazy var scoreBadge: UILabel = {
+        let label = UILabel()
+        label.text = "\(self.score)"
+        label.textColor = .white
+        label.font = .preferredFont(forTextStyle: .largeTitle)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
 
     var isSoundOn: Bool = true {
@@ -60,6 +76,7 @@ class AppUI: UIView {
         super.init(frame: frame)
 
         self.addSubview(disableMusicButton)
+        self.addSubview(scoreBadge)
         setConstraints()
     }
 
@@ -76,7 +93,10 @@ class AppUI: UIView {
             disableMusicButton.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
             disableMusicButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             disableMusicButton.widthAnchor.constraint(equalToConstant: 28),
-            disableMusicButton.heightAnchor.constraint(equalTo: disableMusicButton.widthAnchor)
+            disableMusicButton.heightAnchor.constraint(equalTo: disableMusicButton.widthAnchor),
+
+            scoreBadge.topAnchor.constraint(equalTo: disableMusicButton.topAnchor),
+            scoreBadge.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16)
         ])
     }
 }
